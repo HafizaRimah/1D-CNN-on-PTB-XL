@@ -75,17 +75,20 @@ def parse_ecg_file(file_bytes: bytes, filename: str) -> np.ndarray:
     if ext == "npy":
         arr = np.load(io.BytesIO(file_bytes))
     elif ext in ["csv", "txt"]:
-        # Try comma, tab, or whitespace delimiter
+        import pandas as pd
         try:
-            arr = np.loadtxt(io.BytesIO(file_bytes), delimiter=",")
+            # Pandas automatically handles headers (e.g. 'I,II,III,aVR...')
+            df = pd.read_csv(io.BytesIO(file_bytes))
+            arr = df.to_numpy(dtype=np.float32)
         except Exception:
-            arr = np.loadtxt(io.BytesIO(file_bytes))
+            df = pd.read_csv(io.BytesIO(file_bytes), sep=r"\s+")
+            arr = df.to_numpy(dtype=np.float32)
     elif ext == "json":
         data = json.loads(file_bytes.decode("utf-8"))
         if isinstance(data, dict) and "signal" in data:
-            arr = np.array(data["signal"])
+            arr = np.array(data["signal"], dtype=np.float32)
         else:
-            arr = np.array(data)
+            arr = np.array(data, dtype=np.float32)
     else:
         raise ValueError(f"Unsupported file format '.{ext}'. Use .csv, .npy, .json, or .txt.")
 
