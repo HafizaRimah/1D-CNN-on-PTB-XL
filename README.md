@@ -1,6 +1,10 @@
 # 1D-CNN on PTB-XL: Early Fusion vs. Lead-Wise Fusion
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HafizaRimah/1D-CNN-on-PTB-XL/blob/main/notebooks/01_data_loading_inspection.ipynb)
+| Notebook | Link |
+| :--- | :--- |
+| **01. Data Loading & Inspection** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HafizaRimah/1D-CNN-on-PTB-XL/blob/main/notebooks/01_data_loading_inspection.ipynb) |
+| **02. Training & Fair Comparison** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HafizaRimah/1D-CNN-on-PTB-XL/blob/main/notebooks/02_training_and_comparison.ipynb) |
+
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![Dataset](https://img.shields.io/badge/PhysioNet-PTB--XL-blue.svg)](https://physionet.org/content/ptb-xl/1.0.3/)
 
