@@ -109,3 +109,4 @@ pip install -r requirements.txt
 
 ### 2. Run in Google Colab
 Click the badge at the top of the README to open any notebook directly in Google Colab with a free GPU!
+.
